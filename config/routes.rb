@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'new/edit'
-  get 'lists/:id' => 'lists#show', :as => :list
+  get 'lists/new'
+  get '/lists/:id' => 'lists#show', :as => :list
+  post '/lists' => 'lists#create'
   root 'lists#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
