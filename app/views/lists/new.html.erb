@@ -1,7 +1,19 @@
-<form action="<%= lists_path%>" method="POST"> 
+<!-- <form action="<%#= lists_path%>" method="POST"> 
   
   <input type="text" name="list[name]">
 
   <input type="submit">
 
-</form>  
+</form>   -->
+
+<%= form_tag(lists_path) do %>
+  
+  <%= text_field_tag 'list[name]' %>
+
+  <%= submit_tag %>
+
+<% end %>  
+
+<%# These 2 forms are equivalent the same %>
+
+<%#= form_tag(lists_path, :method => post) do %> <%#is the same as <%#= form_tag(lists_path) do %>
