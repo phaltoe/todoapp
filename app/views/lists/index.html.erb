@@ -1,0 +1,15 @@
+<% @lists.each do |list| %>
+  <ol>
+    <li>
+    <%# Here I will show you levels of abstraction that Rails give us, which are equivalent the same%>
+
+      <!-- <%= link_to list.name, list_path(list.id) %> -->
+
+      <%= link_to list.name, list_path(list) %>
+      
+      <!-- <%= link_to list.name, list %> -->
+
+    <%# All three are equivalent the same, but we should use the intermediate one. %>  
+    </li>
+  </ol>
+<% end %>  
