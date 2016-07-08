@@ -19,11 +19,14 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new
-    @list.name = params[:list][:name]
-    @list.save
+    @list = List.new(list_params)
 
-    redirect_to list_path(@list.id)
+    if @list.valid?
+      @list.save
+      redirect_to list_path(@list.id)
+    else
+      render :new
+    end
   end
 
   def destroy
