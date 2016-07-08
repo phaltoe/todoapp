@@ -16,9 +16,16 @@
   <%#= submit_tag %>
 
 <%# end %>  --> 
+<% if @list.errors.any? %>
+  <% @list.errors.messages.each do |msg| %>
+    <%= msg.first %>
+  <% end %>
+<% end %>    
 
 <%= form_for(@list) do |f| %>
+
   <%= f.text_field :name %>
+
   <%= f.submit %>
 <% end %> 
 
