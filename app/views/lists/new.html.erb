@@ -8,14 +8,19 @@
 
 </form>   -->
 
-
-<%= form_tag(lists_path) do %>
+<!-- 
+<%#= form_tag(lists_path) do %>
   
-  <%= text_field_tag 'list[name]' %>
+  <%#= text_field_tag 'list[name]' %>
 
-  <%= submit_tag %>
+  <%#= submit_tag %>
 
-<% end %>  
+<%# end %>  --> 
+
+<%= form_for(@list) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %> 
 
 <%# These 2 forms are equivalent the same %>
 
