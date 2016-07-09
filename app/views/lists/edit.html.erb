@@ -1,2 +1,7 @@
-<h1>New#edit</h1>
-<p>Find me in app/views/new/edit.html.erb</p>
+<h1>Edit Form</h1>
+
+<%= form_for(@list) do |f| %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %> 
