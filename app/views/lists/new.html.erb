@@ -16,19 +16,18 @@
   <%#= submit_tag %>
 
 <%# end %>  --> 
-<% if @list.errors.any? %>
-  <% @list.errors.messages.each do |msg| %>
-    <%= msg.first %>
-  <% end %>
-<% end %>    
+
+<style>
+  .field_with_errors {border: 1px solid red;}
+</style>  
+
 
 <%= form_for(@list) do |f| %>
-
   <%= f.text_field :name %>
 
   <%= f.submit %>
 <% end %> 
 
-<%# These 2 forms are equivalent the same %>
+<%# These 3 forms are equivalent the same %>
 
 <%#= form_tag(lists_path, :method => post) do %> <%#is the same as <%#= form_tag(lists_path) do %>
