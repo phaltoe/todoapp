@@ -1,4 +1,5 @@
-<h1>Create a new List:</h1>
+<h1>Create List Form:</h1>
+<%= render 'form' %>
 <!-- <form action="<%#= lists_path%>" method="POST"> 
   
   <input type="text" name="list[name]">
@@ -17,16 +18,16 @@
 
 <%# end %>  --> 
 
-<style>
+<!-- <style>
   .field_with_errors {border: 1px solid red;}
 </style>  
 
 
-<%= form_for(@list) do |f| %>
-  <%= f.text_field :name %>
+<%#= form_for(@list) do |f| %>
+  <%#= f.text_field :name %>
 
-  <%= f.submit %>
-<% end %> 
+  <%#= f.submit %>
+<%# end %>  -->
 
 <%# These 3 forms are equivalent the same %>
 

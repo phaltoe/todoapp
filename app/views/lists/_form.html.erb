@@ -1,0 +1,10 @@
+<style>
+  .field_with_errors {border: 1px solid red;}
+</style>  
+
+
+<%= form_for(@list) do |f| %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %> 
