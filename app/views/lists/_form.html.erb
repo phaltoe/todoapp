@@ -6,5 +6,10 @@
 <%= form_for(@list) do |f| %>
   <%= f.text_field :name %>
 
+  <%= f.fields_for :items, @list.items.build do |item_form| %>
+    <%= item_form.text_field :description %>
+    <%= item_form.text_field :priority %>
+  <% end %>
+
   <%= f.submit %>
 <% end %> 

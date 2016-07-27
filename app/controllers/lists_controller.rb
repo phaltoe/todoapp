@@ -25,7 +25,6 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    @list.items.build(description: params[description])
 
     if @list.valid?
       @list.save
@@ -41,6 +40,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit!
+    params.require(:list).permit(:name, :item_attributes => [:description, :priority])
   end
 end
