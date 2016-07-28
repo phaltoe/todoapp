@@ -3,7 +3,7 @@
 </style>  
 
 
-<%= form_for(@list) do |f| %>
+<%= form_for @list do |f| %>
   <%= f.text_field :name %>
 
   <%= f.fields_for :items, @list.items.build do |item_form| %>

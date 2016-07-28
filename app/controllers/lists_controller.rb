@@ -40,6 +40,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :item_attributes => [:description, :priority])
+    params.require(:list).permit!
   end
 end
