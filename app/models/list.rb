@@ -4,15 +4,12 @@ class List < ActiveRecord::Base
 
   has_many :items
 
-  accepts_nested_attributes_for :items
+  # accepts_nested_attributes_for :items
 
-  # def item_attributes=(attributes)
-  #   items_array.each do |index, item_hash|
-  #     self.items.build(item_hash) #is equivalent the same as lines 10-12
-  #     # self.items.build do |item|
-  #     #   item.description = [:item_hash].description
-  #     #   item.priority = [:item_hash].priority
-  #   end
-  # end
+  def items_attributes=(attributes)
+    attributes.each do |i, item_hash|
+      self.items.build(item_hash)
+    end
+  end
 
 end
