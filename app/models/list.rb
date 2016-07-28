@@ -4,7 +4,7 @@ class List < ActiveRecord::Base
 
   has_many :items
 
-  # accepts_nested_attributes_for :items
+  # accepts_nested_attributes_for :items, :reject_if => :all_blank
 
   def items_attributes=(attributes)
     attributes.each do |i, item_hash|
