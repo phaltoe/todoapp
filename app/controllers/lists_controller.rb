@@ -7,6 +7,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @list = List.new
   end
 
   def new
@@ -28,7 +29,7 @@ class ListsController < ApplicationController
 
     if @list.valid?
       @list.save
-      redirect_to list_path(@list.id)
+      redirect_to lists_path
     else
       render :new
     end

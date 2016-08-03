@@ -1,16 +1,22 @@
-<h1>My Awesome TODO List!</h1>
-<% @lists.each do |list| %>
-  <ul>
+<header class="header">
+  <h1>todos</h1>
+  <%= form_for @list do |f| %>
+    <%= f.text_field :name, class: "new-todo", placeholder: "Create a new list!", autofocus: true %>
+  <% end %>  
+</header>
+<section class="main">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul class="todo-list">
+    <% @lists.each do |list| %>
     <li>
-    <%# Here I will show you levels of abstraction that Rails give us, which are equivalent the same%>
-
-      <!-- <%= link_to list.name, list_path(list.id) %> -->
-
-      <%= link_to list.name, list_path(list) %>
-
-      <!-- <%= link_to list.name, list %> -->
-
-    <%# All three are equivalent the same, but we should use the intermediate one. %>  
+      <div class="view">
+        <label><%= link_to list.name, list %></label>
+      </div>
     </li>
+    <% end %>
   </ul>
-<% end %>  
+</section>
+<footer class="footer">
+</footer>
+
+ 
