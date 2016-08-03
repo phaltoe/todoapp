@@ -1,9 +1,22 @@
 <h1><%= @list.name %></h1>
-
-<ol>
-  <% @list.items.each do |item| %>
-    <li><%= item.description %></li> 
-  <% end %>
-</ol> 
+<header class="header">
+  <%= form_for @list do |f| %>
+    <%= f.text_field :name, class: "new-todo", placeholder: "Create a new list!", autofocus: true %>
+  <% end %>  
+</header>
+<section class="main">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul class="todo-list">
+    <% @list.items.each do |item| %>
+    <li>
+      <div class="view">
+        <label><%= item.description %></label>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</section>
+<footer class="footer">
+</footer>
 
 <%= link_to("Edit This List", edit_list_path) %><br>

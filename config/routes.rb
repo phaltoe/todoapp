@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # post '/lists' => 'lists#create', 
   # root 'lists#index'
 
-  resources :lists
+  resources :lists do 
+    resources :items, only: [:create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
