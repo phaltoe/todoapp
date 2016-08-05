@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # get 'lists/new'
   # get '/lists/:id' => 'lists#show', :as => :list
   # post '/lists' => 'lists#create', 

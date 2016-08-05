@@ -1,7 +1,8 @@
 <h1><%= @list.name %></h1>
 <header class="header">
-  <%= form_for @list do |f| %>
-    <%= f.text_field :name, class: "new-todo", placeholder: "Create a new list!", autofocus: true %>
+  <%#= form_for(Item.new, :url => list_items_path(@list )) do |f| %>
+  <%= form_for([@list, Item.new]) do |f| %>
+    <%= f.text_field :description, class: "new-todo", placeholder: "Add a task!", autofocus: true %>
   <% end %>  
 </header>
 <section class="main">
