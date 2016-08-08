@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:description, :list_id)
+    params.require(:item).permit(:description)
   end
 
 end
