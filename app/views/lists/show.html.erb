@@ -13,9 +13,22 @@
       <%= render 'items/item', item: item %>
       <!-- or -->
       <%#= render partial: 'items/item', locals: { item: item} %>
+      <!-- or -->
+      <%#= render item %>
     <% end %>
     <!-- is exactly the same as -->
+
+      <%#= render collection: @list.items, partial: 'items/item', as: :item %>
+      <!-- For every ITEM in the collection "@list.items" please render the partial 'items.item' -->
+
+      <!-- or -->
+
+      <%#= render collection: @list.items, partial: 'items/item' %>
+
+      <!-- or -->
+
       <!-- <%= render @list.items %> -->
+      
   </ul>
 </section>
 <footer id="footer">
